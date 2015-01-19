@@ -7,8 +7,11 @@
    if (c & (~255)) { if (c < 0) c = 0; else c = 255; }
 
 
+
 using namespace std;
 using namespace cv;
+
+Mat yuv2rgb(char filename[]);
 
 int height =720;
 int width = 1280;
@@ -42,8 +45,9 @@ cout << "displaying the image " << argv[1] << endl;
 namedWindow("image",WINDOW_AUTOSIZE);
 namedWindow("edges",WINDOW_AUTOSIZE);
 
+Mat image = yuv2rgb(argv[1]);
 
-imshow("image",yuv2rgb(argv[1]));
+imshow("image",image);
 imshow("edges",cannyEdgeDetector(image));
 
 
