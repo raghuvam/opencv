@@ -76,7 +76,7 @@ Mat image(720,1280,CV_8UC3);
    int h=0;
    int w=0;
    l = height;
-   
+
    s = src;
    d = dst;
    while (l--) {
